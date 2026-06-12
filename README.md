@@ -25,11 +25,12 @@ cd steganography-tool
 
 # Install the tool and its dependencies
 pip install .
-2. Usage
 
+2. Usage
 Once installed, you can run the tool from anywhere in your terminal by simply typing:
 
 steg-tool
+
 Technical Details
 
 This tool uses LSB steganography to modify the Red channel of pixels. The decoder scans the image in the exact sequence as the encoder, gathering values until it hits the STOP_SIGNAL (0), then maps the integers back to text via ASCII.
