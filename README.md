@@ -1,26 +1,63 @@
- # SteganoHide
+# SteganoHide
 
-A Python CLI utility that hides secret text messages inside the Red channel of PNG images using Least Significant Bit (LSB) steganography.
+A Python CLI tool for hiding secret text in PNG images using LSB (Least Significant Bit) steganography.
+
+## Demo
+
+![SteganoHide in Action](demo.gif)
+
+<br>
+
+[![Try it!](https://img.shields.io/badge/Try_SteganoHide-Click_Here-blue?style=for-the-badge&logo=github)](https://github.com/ivadebandit/steganography-tool)
+
+## Features
+
+* **Encodes secret messages** into any standard `.png` image file.
+* **Decodes hidden messages** from processed images to reveal the original text.
+* **Uses LSB steganography** for invisible data embedding that preserves image quality.
+* **Simple CLI menu** to guide the user through the process.
+* **Immediate feedback** provided directly in your terminal.
 
 ## Quick Start
-1. Clone this repository:
+
+Get up and running in three simple steps:
+
 ```bash
-   git clone [https://github.com/ivadebandit/steganography-tool.git](https://github.com/ivadebandit/steganography-tool.git)
-   cd steganography
+# 1. Clone and enter the project
+git clone https://github.com/ivadebandit/steganography-tool.git
+cd steganography-tool
 
-   Features
-Encodes text messages into standard PNG files without visible quality loss.
+# 2. Install dependencies
+pip install -r requirements.txt
 
-Decodes hidden messages by scanning the exact pixel path used during encoding.
+# 3. Launch the tool
+python steg_tool.py
+```
 
-Stop-Signal Logic: Uses a 0 signal to automatically detect the end of a message.
+## Local Development
 
-Safety Checks: Prevents encoding if the message is too long for the image size.
+### Prerequisites
 
-How it works
-This tool modifies the Red channel of pixels. The decoder scans the image in the exact same order (nested loops) as the encoder. It collects numerical values until it encounters the STOP_SIGNAL (0), at which point it converts the collected numbers back into text using ASCII mapping.
+- Python 3.10+
+- Git
 
-**Push the update:**
-    ```bash
-git push
+### Setup
 
+Clone and Setup Environment:
+
+```bash
+git clone https://github.com/ivadebandit/steganography-tool.git
+cd steganography-tool
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+Install Dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Technical Details
+
+This tool uses LSB steganography to modify the Red channel of pixels. The decoder scans the image in the exact sequence as the encoder, gathering values until it hits the STOP_SIGNAL (0), then maps the integers back to text via ASCII. No external system dependencies are required.
