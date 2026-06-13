@@ -1,2 +1,0 @@
-[console_scripts]
-steganohide = steg_tool:main
