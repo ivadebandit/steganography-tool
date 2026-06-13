@@ -1,0 +1,51 @@
+Metadata-Version: 2.4
+Name: steganohide
+Version: 1.0.0
+Summary: A CLI tool to hide secret text inside PNG images using LSB steganography.
+Author-email: Iva Bakalovska <iva.bakalovska@gmail.com>
+Project-URL: Homepage, https://github.com/ivadebandit/steganography-tool
+Project-URL: Bug Tracker, https://github.com/ivadebandit/steganography-tool/issues
+Keywords: steganography,LSB,image,CLI,privacy
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Topic :: Security :: Cryptography
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: Pillow>=9.0
+
+SteganoHide
+
+A Python CLI tool for hiding secret text in PNG images using LSB (Least Significant Bit) steganography.
+
+Demo
+
+
+
+
+Features
+Encodes secret messages into any standard .png image file.
+Decodes hidden messages from processed images to reveal the original text.
+Uses LSB steganography for invisible data embedding that preserves image quality.
+Simple CLI menu to guide the user through the process.
+Immediate feedback provided directly in your terminal.
+Quick Start
+1. Installation
+
+The easiest way to install this tool is using pip:
+
+# Clone the repository
+git clone https://github.com/ivadebandit/steganography-tool.git
+cd steganography-tool
+
+# Install the tool and its dependencies
+pip install .
+2. Usage
+
+Once installed, you can run the tool from anywhere in your terminal by simply typing:
+
+steg-tool
+Technical Details
+
+This tool uses LSB steganography to modify the Red channel of pixels. The decoder scans the image in the exact sequence as the encoder, gathering values until it hits the STOP_SIGNAL (0), then maps the integers back to text via ASCII.

@@ -2,10 +2,11 @@ SteganoHide
 
 A Python CLI tool for hiding secret text in PNG images using LSB (Least Significant Bit) steganography.
 
-Demo
+## Demo
 
+![SteganoHide in Action](demo.gif)
 
-
+<br>
 
 Features
 Encodes secret messages into any standard .png image file.
