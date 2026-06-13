@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: steganohide
-Version: 1.1.0
+Version: 1.1.1
 Summary: A CLI tool to hide secret text inside PNG images using LSB steganography.
 Author-email: Iva Bakalovska <iva.bakalovska@gmail.com>
 Project-URL: Homepage, https://github.com/ivadebandit/steganography-tool

@@ -21,6 +21,12 @@ steganohide
 
 That's it. The tool launches an interactive menu — no extra setup needed.
 
+> **Windows users:** If `steganohide` doesn't work after installing, run it with the full path:
+> ```
+> C:\Users\YOUR_USERNAME\AppData\Local\Python\pythoncore-3.14-64\Scripts\steganohide.exe
+> ```
+> Or add the Scripts folder to your PATH.
+
 ---
 
 ## Features
