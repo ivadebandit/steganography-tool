@@ -19,6 +19,15 @@ def numbers_to_message(numbers):
     return "".join(chr(num) for num in numbers)
 
 def encode_image(image_file, message, output_file):
+    if not all(ord(c) < 128 for c in message):
+        print("ERROR: Message contains non-ASCII characters (no emoji or special characters).")
+        return
+
+    if not output_file.lower().endswith('.png'):
+        print("ERROR: Output file must be a .png file.")
+        return
+
+
     try:
         img = Image.open(image_file).convert('RGB')
     except Exception as e:
