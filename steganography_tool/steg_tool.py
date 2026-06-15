@@ -1,4 +1,5 @@
 from PIL import Image
+import os
 
 # ----------------------------------------------------------
 # CONSTANTS
@@ -28,6 +29,7 @@ def encode_image(image_file, message, output_file):
         return
 
 
+    image_file = os.path.expanduser(image_file)
     try:
         img = Image.open(image_file).convert('RGB')
     except Exception as e:
@@ -62,6 +64,7 @@ def encode_image(image_file, message, output_file):
     print(f"\nSuccess! Encoded image saved as: '{output_file}'")
 
 def decode_image(image_file):
+    image_file = os.path.expanduser(image_file)
     try:
         img = Image.open(image_file).convert('RGB')
     except Exception as e:
